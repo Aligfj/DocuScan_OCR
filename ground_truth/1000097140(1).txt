@@ -1,0 +1,13 @@
+contours of training data, and reconstruct spine contours via latent contour coefficients. To suppress inaccurate predictions and mask connectivity, we integrate latent contour coefficient regression with anchor box classification to obtain spinal segment contours, in which sparse and dense assignments are integrated to more precisely detect spinal segments.
+
+Privacy-Preserving Scoliosis Generation. We explore the latent diffusion model
+
+(LDM) [12] for scoliosis image self-generation. Specifically, we train LDM on our private dataset Spinal2023, utilizing a diffusion process to map raw images from pixel to latent space. During inference, the trained LDM with text-conditioned prompts can generate X-ray images. To mitigate privacy leaks [13], we employ data augmentation during LDM training, promote data balance, and introduce a privacy review [14] to exclude potentially privacy-compromising samples based on structural and pixel simi- larities, coupled with manual verification.
+
+Cost-Effective Semi-Supervised Annotation. Inspired from semi-supervised pseudo- labeling [15] and multi-stage interactive annotation [16], we propose a new data engine, which drives an iterative pipeline with automatic annotation and selection. It consists of four stages: pseudo-labeling, auto-annotation, manual-assisted annotation, and pri- vacy review. At each iteration, spine contour detection network is first re-trained using current dataset, and its trained model is used for pseudo-labeling so as to further update the dataset. This iterative pipeline culminates in our open-source clean dataset named Spinal-AI2024, which is the largest released scoliosis X-ray dataset to our knowledge. The main contributions of this paper are threefold:
+
+We propose a novel low-rank approximation parameterized spine representation for curvature angle estimation, in which latent contour coefficient regression and anchor box classification with sparse and dense assignments are combined to detect irregular contours of spinal segments.
+
+We propose a new data engine with semi-supervised labeling and privacy review in an iterative manner, which enables the generation of large-scale clean scoliosis X-ray images without privacy leaks. To our knowledge, our open-source Spinal-
+
+AI2024 is the largest released scoliosis X-ray dataset.
