@@ -1,0 +1,11 @@
+Plan (Assignment 1)
+
+Reference types
+
+comparison
+operator ==
+method calls
+
+
+
+Object oriented programming
